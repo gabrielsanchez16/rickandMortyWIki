@@ -1,0 +1,100 @@
+
+
+.container-img {
+    position: relative;
+    display: inline-block;
+}
+
+.characters {
+    border-radius: 10px;
+    background-color: rgb(27, 25, 25);
+    text-align: center;
+    -webkit-box-shadow: 0px 10px 33px -17px rgba(173, 173, 173, 1);
+    -moz-box-shadow: 0px 10px 33px -17px rgba(173, 173, 173, 1);
+    box-shadow: 0px 10px 33px -17px rgba(173, 173, 173, 1);
+    flex-basis: min-content;
+    width: 220px;
+    padding: 8px;
+    color: rgb(34, 208, 34);
+    transition: all .5s ease-in-out;
+    
+}
+
+.characters h3 {
+    font-weight: 600;
+}
+
+.characters img {
+    width: 200px;
+    height: 200px;
+    border-radius: 10px;
+}
+
+.characters li {
+    margin-bottom: 4%;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+svg{
+    fill:rgb(34, 208, 34) !important;
+}
+
+.characters li b svg {
+    fill: rgb(34, 208, 34) !important;
+}
+
+.characters li b{
+    display: flex;
+    align-items: center;
+    gap: 3px;
+}
+
+.characters ul {
+    list-style: none;
+}
+
+.description {
+    text-align: start;
+    margin-top: 10%;
+}
+
+.status {
+    
+    background-color: rgb(27, 25, 25);
+    border-radius: 5px;
+    padding: 2px;
+    position: absolute;
+    top: 3%;
+    left: -2%;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.Circle {
+    padding: 6px;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 5px;
+}
+
+.btn-detail-person{
+    width: 100%;
+    background-color: rgb(33, 141, 33);
+    border-radius: 5px;
+    padding: .5rem;
+    color: white;
+    font-weight: 700;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+.characters:hover{
+    transform: scale(1.03);
+    cursor: pointer;
+}
+
