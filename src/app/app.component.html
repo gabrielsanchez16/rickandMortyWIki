@@ -1,10 +1,3 @@
 
-<div class="container-cards">
-  <div  *ngFor="let objeto of datos">
-    <app-character [objeto]="objeto"></app-character>
-  </div>
-  <app-pagination [prevHandler]="getPrevPage" [nextHandler]="getNextPage"></app-pagination>
-</div>
-
 
 <router-outlet></router-outlet>

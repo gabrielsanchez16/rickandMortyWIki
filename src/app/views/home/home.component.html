@@ -1,0 +1,16 @@
+<div class="container-global" (click)="reproducirMusica()">
+    <header>
+      <div class="shadow-header"></div>
+    </header>
+    <div class="container-cards">
+        <app-character *ngFor="let objeto of datos" [objeto]="objeto">
+        </app-character>  
+    </div>
+    <div>
+      <app-pagination ></app-pagination>
+    </div>
+    <audio id="audio1" #audioPlayer loop>
+      <source src="../assets/audio/rickandmortysound.mp3" type="audio/mp3">
+      Tu navegador no soporta la etiqueta de audio.
+    </audio>
+  </div>
