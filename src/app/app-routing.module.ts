@@ -5,7 +5,7 @@ import { ProfileCharacterComponent } from './views/profile-character/profile-cha
 import { WelcomeComponent } from './views/welcome/welcome.component';
 
 const routes: Routes = [
-  {path:'', redirectTo:'home' ,pathMatch:'full'},
+  {path:'', redirectTo:'welcome' ,pathMatch:'full'},
   {path:'welcome', component:WelcomeComponent},
   {path:'home', component:HomeComponent},
   {path:'profileCharacter', component:ProfileCharacterComponent}

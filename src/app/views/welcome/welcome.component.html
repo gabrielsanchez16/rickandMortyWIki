@@ -1,9 +1,15 @@
 <div class="content-welcome">
     <div class="content-input-welcome">
-        <h1>Bienvenidos a la wiki de Rick and Morty</h1>
-        <form onsubmit="getSession()">
-            <input type="text" placeholder="Danos tu nombre cientifico">
-            <input type="submit" value="Entrar">
-        </form>
+        <img src="../../../assets/img/rickymortyletter.png" alt="letters">
+        <div class="form">
+            <input class="input-write-text" [(ngModel)]='nombre' type="text" placeholder="Danos tu nombre cientifico">
+            <div *ngIf="err" class="content-validation">
+                <p>Lo siento cientifico necesito tu nombre</p>
+            </div>
+            
+            <button (click)="getSession()" class="input-enter-site" type="submit">
+                Entrar
+            </button>
+        </div>
     </div>
 </div>

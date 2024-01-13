@@ -1,24 +1,31 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-welcome',
   templateUrl: './welcome.component.html',
   styleUrls: ['./welcome.component.css']
 })
-export class WelcomeComponent implements OnInit {
+export class WelcomeComponent  {
 
   
   nombre: string = ''; // Inicializa la propiedad aquí o en el ngOnInit
+  err : boolean = false
 
-  constructor() { }
+  constructor(private router: Router) { }
 
-  ngOnInit(): void {
-    // Puedes inicializar la propiedad nombre aquí si es necesario
-  }
 
-  getSession(event: Event): void {
-    event.preventDefault();
-    console.log("Bienvenido " + this.nombre);
+  getSession(): void {
+    if(this.nombre === ""){
+      this.err = true
+      setTimeout(() => {
+        this.err = false
+      }, 2000);
+    }else{
+      console.log("Bienvenido " + this.nombre);
+    this.router.navigate(["/home"])
+    }
+    
   }
 
 }
