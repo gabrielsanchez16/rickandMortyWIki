@@ -1,4 +1,5 @@
 import { Component,Input } from "@angular/core";
+import { HttpServices } from "src/services/http.services";
 
 
 @Component ({
@@ -9,6 +10,6 @@ import { Component,Input } from "@angular/core";
 
 
 export class PaginationComponent  {
-    @Input() prevHandler!: () => void;
-    @Input() nextHandler!: () => void;
+  
+    
 }

@@ -1,0 +1,38 @@
+.card-episode{
+    padding-bottom: .5rem;
+    border-bottom: solid 3px rgba(255, 255, 255, 0.235);
+}
+
+.card-episode ul{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+}
+
+.card-episode ul li{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.card-episode ul li svg{
+    fill: rgb(34, 208, 34);
+}
+
+.content-loadin-small{
+    text-align: center;
+}
+
+.content-loadin-small img{
+    width: 80px;
+    padding: 8px;
+        border-radius: 50%;
+        border: 3px solid white;
+}
+
+@media screen and (max-width:500px) {
+    .card-episode ul li {
+        font-size: 12px;
+    }
+}

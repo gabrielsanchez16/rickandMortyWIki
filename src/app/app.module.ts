@@ -8,6 +8,7 @@ import { CharacterComponent } from './character/character.component';
 import { PaginationComponent } from './pagination/pagination.component';
 import { HttpServices } from 'src/services/http.services';
 import { FormsModule } from '@angular/forms';
+import { EpisodeComponent } from './episode/episode.component';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { FormsModule } from '@angular/forms';
     AppComponent,
     CharacterComponent,
     PaginationComponent,
-    packRoutingUse
+    packRoutingUse,
+    EpisodeComponent
   ],
   imports: [
     BrowserModule,
