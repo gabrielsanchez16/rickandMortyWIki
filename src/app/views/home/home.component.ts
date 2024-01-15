@@ -13,6 +13,8 @@ export class HomeComponent implements OnInit {
   chargePage: boolean = false;
   patrocinadores: any[] = [];
   paginaActual = 1;
+  keyword = "";
+  validateForm = false;
   numeroDePaginas = 1;
   elementosPorPagina = 20;
   urlPaginaAnterior = '';
@@ -73,7 +75,7 @@ export class HomeComponent implements OnInit {
     }
   }
 
-  filtercharacter(gender: string) {
+  filterCharacterByGender(gender: string) {
     this.paginaActual = 1
     if (gender === "m") {
       this.chargePage = false
@@ -103,6 +105,25 @@ export class HomeComponent implements OnInit {
     }
   }
 
-
+  filterCharacterByName(){
+    if(this.keyword === ""){
+      this.validateForm = true
+      setTimeout(() => {
+        this.validateForm = false
+      }, 2000);
+    }else{
+      this.chargePage = false
+      this.httpServices.getCharacters(`https://rickandmortyapi.com/api/character/?name=${this.keyword}`).subscribe((data) => {
+        this.patrocinadores = data.results;
+        setTimeout(() => {
+          this.chargePage = true
+        }, 5000);
+        this.numeroDePaginas = Math.ceil(data.info.count / 20);
+        console.log(data.info)
+        this.urlPaginaAnterior = data.info.prev;
+        this.urlPaginaSiguiente = data.info.next;
+      });
+    }
+  }
 
 }
