@@ -6,9 +6,10 @@ import { AppRoutingModule,packRoutingUse } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CharacterComponent } from './character/character.component';
 import { PaginationComponent } from './pagination/pagination.component';
-import { HttpServices } from 'src/services/http.services';
+import { HttpServices } from 'src/app/services/http.services';
 import { FormsModule } from '@angular/forms';
 import { EpisodeComponent } from './episode/episode.component';
+import { SliderComponent } from './slider/slider.component';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { EpisodeComponent } from './episode/episode.component';
     CharacterComponent,
     PaginationComponent,
     packRoutingUse,
-    EpisodeComponent
+    EpisodeComponent,
+    SliderComponent
   ],
   imports: [
     BrowserModule,

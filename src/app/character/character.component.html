@@ -1,4 +1,4 @@
-<article class="characters">
+<article class="characters" [routerLink]="['/profileCharacter',objeto.id]">
     <div class="container-img">
       <img [src]="objeto.image" alt="" />
       <div>
@@ -35,5 +35,5 @@
         </li>
       </ul>
     </div>
-    <button class="btn-detail-person" [routerLink]="['/profileCharacter',objeto.id]">Ver personaje</button>
+    <button class="btn-detail-person" >Ver personaje</button>
   </article>

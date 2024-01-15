@@ -98,3 +98,14 @@ svg{
     cursor: pointer;
 }
 
+@media screen and (max-width:500px){
+    .characters img {
+        width: 150px;
+        height: 150px;
+
+    }
+    .characters{
+        width: 170px;
+    }
+}
+

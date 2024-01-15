@@ -1,5 +1,5 @@
 import { Component, OnInit,Input } from '@angular/core';
-import { HttpServices } from 'src/services/http.services';
+import { HttpServices } from 'src/app/services/http.services';
 
 @Component({
   selector: 'app-episode',

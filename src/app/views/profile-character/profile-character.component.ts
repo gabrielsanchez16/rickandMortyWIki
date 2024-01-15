@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { HttpServices } from 'src/services/http.services';
+import { HttpServices } from 'src/app/services/http.services';
+import { Location } from '@angular/common';
+
 
 @Component({
   selector: 'app-profile-character',
@@ -15,7 +17,8 @@ export class ProfileCharacterComponent implements OnInit {
 
   constructor(
     private httpServices: HttpServices,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private location: Location
     ) { }
 
   ngOnInit(): void {
@@ -33,5 +36,11 @@ circlechange: { [key: string]: string } = {
   Dead: 'red',
   unknown: 'purple',
 };
+
+volverAtras(): void {
+  this.location.back();
+}
+
+
 
 }

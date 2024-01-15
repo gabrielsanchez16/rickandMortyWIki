@@ -1,5 +1,6 @@
-import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
-import { HttpServices } from 'src/services/http.services';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { HttpServices } from 'src/app/services/http.services';
 
 
 @Component({
@@ -9,7 +10,6 @@ import { HttpServices } from 'src/services/http.services';
 })
 export class HomeComponent implements OnInit {
 
-  @ViewChild('audioPlayer') audioPlayer!: ElementRef;
   chargePage: boolean = false;
   patrocinadores: any[] = [];
   paginaActual = 1;
@@ -17,22 +17,33 @@ export class HomeComponent implements OnInit {
   elementosPorPagina = 20;
   urlPaginaAnterior = '';
   urlPaginaSiguiente = '';
+  name = "";
+  urlMale = "https://rickandmortyapi.com/api/character/?page=1&gender=male";
+  urlFemale = "https://rickandmortyapi.com/api/character/?page=1&gender=female";
 
-  constructor(private httpServices: HttpServices) { }
+  constructor(
+    private httpServices: HttpServices,
+    private router: Router,
+    private route: ActivatedRoute
+  ) { }
 
 
 
-  reproducirMusica(): void {
-    const audioElement: HTMLAudioElement = this.audioPlayer.nativeElement;
-    audioElement.play();
-  }
 
- 
+
+
 
 
   ngOnInit() {
     this.cargarPatrocinadores('https://rickandmortyapi.com/api/character');
+    this.name = this.route.snapshot.queryParams['nombre']
+    if(this.name == null){
+      this.router.navigate(["/"])
+    }
   }
+
+
+
 
   cargarPatrocinadores(url: string) {
     this.chargePage = false
@@ -62,6 +73,36 @@ export class HomeComponent implements OnInit {
     }
   }
 
- 
+  filtercharacter(gender: string) {
+    this.paginaActual = 1
+    if (gender === "m") {
+      this.chargePage = false
+      this.httpServices.getCharacters(this.urlMale).subscribe((data) => {
+        this.patrocinadores = data.results;
+        setTimeout(() => {
+          this.chargePage = true
+        }, 1000);
+        this.numeroDePaginas = Math.ceil(data.info.count / 20);
+        console.log(data.info)
+        this.urlPaginaAnterior = data.info.prev;
+        this.urlPaginaSiguiente = data.info.next;
+      });
+    } else {
+      this.paginaActual = 1
+      this.chargePage = false
+      this.httpServices.getCharacters(this.urlFemale).subscribe((data) => {
+        this.patrocinadores = data.results;
+        setTimeout(() => {
+          this.chargePage = true
+        }, 1000);
+        this.numeroDePaginas = Math.ceil(data.info.count / 20);
+        console.log(data.info)
+        this.urlPaginaAnterior = data.info.prev;
+        this.urlPaginaSiguiente = data.info.next;
+      });
+    }
+  }
+
+
 
 }

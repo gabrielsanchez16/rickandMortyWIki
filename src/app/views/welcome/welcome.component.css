@@ -61,12 +61,11 @@
     font-family: 'Arial Black', sans-serif;
     /* Puedes cambiar la fuente a una que te guste más */
     font-size: 20px;
-    color: #00ddff;
+    color: #ffff;
     /* Color dorado, puedes cambiarlo según tus preferencias */
     text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.8);
     /* Sombra para dar más profundidad */
     letter-spacing: 3px;
-    stroke-color: yellow;
 }
 
 .content-validation img {

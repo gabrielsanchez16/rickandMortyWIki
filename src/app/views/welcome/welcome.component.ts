@@ -23,9 +23,9 @@ export class WelcomeComponent  {
       }, 2000);
     }else{
       console.log("Bienvenido " + this.nombre);
-    this.router.navigate(["/home"])
-    }
+    this.router.navigate(["/home"],{queryParams:{"nombre":this.nombre}}) 
     
   }
 
+}
 }

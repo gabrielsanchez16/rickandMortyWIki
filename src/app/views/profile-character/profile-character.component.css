@@ -1,5 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Rubik+Doodle+Shadow&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Doodle+Shadow&display=swap');
 .content-profile-character {
     background-image: url(../../../assets/img/background-space.jpg);
     background-repeat: no-repeat;
@@ -57,6 +57,14 @@
     position: absolute;
     top: 0;
     left: -100px;
+}
+
+.decoration3{
+    position: absolute;
+    top: 50px;
+    z-index: 999;
+    cursor: pointer;
+    right: 50px;
 }
 
 .decoration1 img {
@@ -139,7 +147,7 @@
     gap: 1.5rem;
     width: 80%;
     max-height: 300px;
-    overflow: scroll;
+    overflow-y: scroll;
 }
 
 
